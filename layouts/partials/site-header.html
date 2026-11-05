@@ -4,9 +4,9 @@
       <span class="brand__mark">SUPER-IRNET-2.0</span>
     </a>
     <nav class="primary-nav" aria-label="Primary navigation">
-      <a href="{{ site.Home.RelPermalink }}">{{ site.Params.navHome }}</a>
+      <a href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}>{{ site.Params.navHome }}</a>
       {{ range where site.RegularPages "Params.weight" "le" 50 }}
-        <a href="{{ .RelPermalink }}">{{ .Params.navTitle | default .Title }}</a>
+        <a href="{{ .RelPermalink }}"{{ if eq $.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>{{ .Params.navTitle | default .Title }}</a>
       {{ end }}
       <details class="nav-dropdown">
         <summary>{{ site.Params.navWorkshop }}</summary>

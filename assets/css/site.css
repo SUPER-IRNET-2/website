@@ -1,13 +1,13 @@
 :root {
-  --ink: #17251f;
-  --muted: #617168;
-  --line: #d7e4dc;
+  --ink: #252b30;
+  --muted: #626b73;
+  --line: #dfe4e7;
   --panel: #ffffff;
-  --surface: #f5faf6;
-  --accent: #2f7d4f;
-  --accent-strong: #c65f2e;
-  --navy: #214b35;
-  --shadow: 0 18px 45px rgba(24, 47, 34, 0.13);
+  --surface: #ffffff;
+  --accent: #176e78;
+  --accent-strong: #b34551;
+  --navy: #25464c;
+  --shadow: 0 8px 24px rgba(25, 40, 48, 0.08);
 }
 
 * {
@@ -21,9 +21,7 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background:
-    linear-gradient(180deg, rgba(245, 250, 246, 0.72), rgba(245, 250, 246, 1) 480px),
-    var(--surface);
+  background: var(--surface);
   font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: 16px;
   line-height: 1.78;
@@ -35,7 +33,7 @@ img {
 }
 
 a {
-  color: #28734b;
+  color: var(--accent);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
 }
@@ -693,6 +691,112 @@ html[lang="en"] .publications-table th:has(span) span {
   color: white;
 }
 
+/* A compact masthead and open reading layout keep long research pages usable. */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.site-header {
+  background: #fff;
+  border-bottom-color: var(--line);
+  backdrop-filter: none;
+}
+
+.site-header__inner {
+  width: min(1280px, calc(100% - 64px));
+  min-height: 80px;
+  gap: 16px;
+}
+
+.brand__mark {
+  padding: 0;
+  min-width: 0;
+  color: var(--ink);
+  background: transparent;
+  font-size: 1.05rem;
+  border-radius: 0;
+}
+
+.primary-nav { align-items: center; gap: 2px; }
+.primary-nav a, .nav-dropdown summary { border-radius: 3px; }
+.primary-nav a[aria-current="page"] {
+  color: var(--accent);
+  background: #edf5f5;
+  box-shadow: inset 0 -2px var(--accent);
+}
+.primary-nav a:hover, .side-nav a:hover,
+.nav-dropdown summary:hover, .nav-dropdown[open] summary {
+  color: var(--accent);
+  background: #edf5f5;
+}
+.language-switch { margin-left: 10px; background: #fff; border-radius: 4px; }
+.language-switch a { border-radius: 2px; }
+
+.hero {
+  width: min(1280px, calc(100% - 64px));
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 40px;
+  margin: 0 auto 40px;
+  padding: 36px 0;
+  border-bottom: 1px solid var(--line);
+}
+.hero__media { border-radius: 0; box-shadow: none; }
+.hero__media img { padding: 0; max-height: 150px; }
+.hero h1 { color: var(--ink); font-size: 2.35rem; line-height: 1.35; overflow-wrap: anywhere; }
+.hero--workshop h1 { font-size: 1.9rem; line-height: 1.4; }
+.eyebrow { font-size: 0.78rem; margin-bottom: 8px; }
+.hero__copy p:last-child { margin-top: 12px; font-size: 0.95rem; }
+.page-shell {
+  width: min(1280px, calc(100% - 64px));
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 48px;
+  margin-bottom: 72px;
+}
+.content-panel { padding: 0; border: 0; border-radius: 0; box-shadow: none; }
+.content-panel section + section { margin-top: 48px; }
+.content-panel h2 {
+  color: var(--ink);
+  font-size: 1.4rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+.content-panel h3 { color: var(--navy); line-height: 1.5; scroll-margin-top: 110px; }
+.home-intro__lead { font-size: 1.5rem; color: var(--ink); line-height: 1.65; }
+.home-stats { background: #f6f8f9; border: 0; margin-top: 30px; }
+.home-stats div { min-height: 114px; }
+.home-stats div + div { border-left: 1px solid #e2e7e9; }
+.home-stats strong { font-size: 2.1rem; }
+.feature-card { background: #fff; border: 0; border-top: 2px solid var(--accent); border-radius: 0; padding: 20px 0; }
+.feature-grid { gap: 26px; }
+.feature-card h3 { color: var(--ink); }
+.project-list strong, .content-panel dt { color: var(--navy); }
+.research-grid div { background: #f6f8f9; border: 0; border-radius: 3px; }
+.research-grid strong { color: var(--ink); }
+.sidebar { top: 104px; gap: 28px; }
+.side-nav, .partner-logos { border: 0; border-radius: 0; padding: 0 0 0 24px; box-shadow: none; border-left: 1px solid var(--line); }
+.side-nav h2 { color: var(--muted); font-size: 0.8rem; margin-bottom: 14px; }
+.side-nav a { font-weight: 500; border-radius: 3px; }
+.partner-logos { gap: 16px; }
+.partner-logos a { background: white; border: 0; border-radius: 0; min-height: 60px; padding: 5px; }
+.partner-logos img { max-height: 46px; }
+.table-scroll { border: 1px solid var(--line); margin: 20px 0 36px; }
+.content-panel .table-scroll table { margin: 0; }
+.content-panel th, .content-panel td { border: 0; border-bottom: 1px solid var(--line); padding: 14px 12px; }
+.content-panel th { background: #edf3f4; color: var(--ink); vertical-align: top; }
+.content-panel tbody tr:nth-child(even) { background: #f8f9fa; }
+.content-panel tbody tr:hover { background: #edf5f5; }
+.publications-table { min-width: 760px; font-size: 0.9rem; }
+.publications-table td:nth-child(2) { font-size: 0.84rem; color: var(--muted); }
+.publications-table td:nth-child(3) { font-weight: 600; }
+.publications-table th:nth-child(2), .publications-table td:nth-child(2) { width: 26%; }
+.publications-table th:nth-child(3), .publications-table td:nth-child(3) { width: 34%; }
+.site-footer { background: #f3f5f6; color: var(--muted); padding: 28px max(24px, calc((100% - 1280px) / 2)); font-size: 0.85rem; }
+.site-footer strong { color: var(--ink); }
+.site-footer a { color: var(--accent); }
+
 @media (max-width: 920px) {
   .site-header__inner {
     align-items: flex-start;
@@ -724,6 +828,15 @@ html[lang="en"] .publications-table th:has(span) span {
 }
 
 @media (max-width: 640px) {
+  .site-header { position: relative; }
+  .hero { grid-template-columns: 90px minmax(0, 1fr); gap: 18px; padding: 24px 0; margin-bottom: 28px; }
+  .hero h1 { font-size: 1.55rem; }
+  .hero--workshop h1 { font-size: 1.35rem; }
+  .hero__copy p:last-child { font-size: 0.85rem; }
+  .eyebrow { font-size: 0.7rem; }
+  .page-shell { gap: 32px; }
+  .side-nav, .partner-logos { padding: 20px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  .language-switch { margin-left: 0; }
   body {
     font-size: 15px;
   }
@@ -768,12 +881,12 @@ html[lang="en"] .publications-table th:has(span) span {
   }
 
   .hero__media img {
-    max-height: 260px;
-    padding: 14px;
+    max-height: 100px;
+    padding: 0;
   }
 
   .content-panel {
-    padding: 22px 18px;
+    padding: 0;
   }
 
   .content-panel dl {
