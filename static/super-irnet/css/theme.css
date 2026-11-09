@@ -1,0 +1,33 @@
+/* SUPER-IRNET 1.0 uses the shared layout with a distinct archive palette. */
+:root {
+  --accent: #943c52;
+  --accent-strong: #226978;
+  --navy: #673d48;
+  --line: #e6dfe1;
+}
+
+.primary-nav a[aria-current="page"],
+.primary-nav a:hover,
+.side-nav a:hover,
+.nav-dropdown summary:hover,
+.nav-dropdown[open] summary {
+  background: #f8eef1;
+}
+
+.home-stats,
+.research-grid div,
+.site-footer {
+  background: #f8f5f6;
+}
+
+.content-panel th {
+  background: #f3e8ec;
+}
+
+.content-panel tbody tr:nth-child(even) {
+  background: #fcf9fa;
+}
+
+.content-panel tbody tr:hover {
+  background: #f8eef1;
+}

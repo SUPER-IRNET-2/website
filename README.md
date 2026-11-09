@@ -2,6 +2,8 @@
 
 This repository manages the website of SUPER-IRNET-2.0.
 
+Public website: [SUPER-IRNET-2.0](https://super-irnet-2.github.io/website/)
+
 ## Local Preview
 
 Install Hugo, then run:
