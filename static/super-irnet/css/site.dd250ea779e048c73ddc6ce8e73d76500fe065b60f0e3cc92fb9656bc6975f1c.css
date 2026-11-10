@@ -42,6 +42,35 @@ a:hover {
   color: var(--accent-strong);
 }
 
+.year-group {
+  margin: 12px 0;
+  border-top: 1px solid var(--line);
+}
+
+.year-group > summary {
+  padding: 16px 12px;
+  color: var(--navy);
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.year-group > summary:hover {
+  color: var(--accent);
+}
+
+.year-group[open] > summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.year-group > .table-scroll {
+  margin-top: 16px;
+}
+
+.year-group > p {
+  padding: 16px 12px 0;
+}
+
 .action-links {
   display: flex;
   flex-wrap: wrap;
