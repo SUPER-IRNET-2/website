@@ -735,6 +735,18 @@ html[lang="en"] .publications-table th:has(span) span {
   object-fit: contain;
 }
 
+.partner-logos .partner-logo--prima {
+  background: #252b30;
+  border-radius: 4px;
+}
+
+.partner-logos .partner-logo--text {
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: #17251f;
@@ -845,9 +857,9 @@ html[lang="en"] .publications-table th:has(span) span {
 .side-nav, .partner-logos { border: 0; border-radius: 0; padding: 0 0 0 24px; box-shadow: none; border-left: 1px solid var(--line); }
 .side-nav h2 { color: var(--muted); font-size: 0.8rem; margin-bottom: 14px; }
 .side-nav a { font-weight: 500; border-radius: 3px; }
-.partner-logos { gap: 16px; }
-.partner-logos a { background: white; border: 0; border-radius: 0; min-height: 60px; padding: 5px; }
-.partner-logos img { max-height: 46px; }
+.partner-logos { grid-template-columns: 1fr; gap: 16px; }
+.partner-logos a { background: white; border: 0; border-radius: 0; min-height: 100px; padding: 10px; }
+.partner-logos img { width: auto; max-width: min(160px, 100%); max-height: 90px; }
 .table-scroll { border: 1px solid var(--line); margin: 20px 0 36px; }
 .content-panel .table-scroll table { margin: 0; }
 .content-panel th, .content-panel td { border: 0; border-bottom: 1px solid var(--line); padding: 14px 12px; }
@@ -884,7 +896,7 @@ html[lang="en"] .publications-table th:has(span) span {
   }
 
   .partner-logos {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .feature-grid--three {
