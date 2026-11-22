@@ -16,7 +16,11 @@
           {{ end }}
         </div>
       </details>
-      <a href="{{ "super-irnet/index.html" | relURL }}">{{ site.Params.navLegacy }}</a>
+      {{ $legacyHome := "super-irnet/index.html" }}
+      {{ if eq site.Language.Lang "en" }}
+        {{ $legacyHome = "super-irnet/en/index.html" }}
+      {{ end }}
+      <a href="{{ $legacyHome | relURL }}">{{ site.Params.navLegacy }}</a>
       <div class="language-switch" aria-label="Language switcher">
         {{ range .AllTranslations }}
           <a class="{{ if eq .Language.Lang site.Language.Lang }}is-active{{ end }}" href="{{ .RelPermalink }}" hreflang="{{ .Language.Locale }}">{{ .Language.Label }}</a>
